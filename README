@@ -1,0 +1,13 @@
+// se instalo express para las rutas y mysql para poder hacer la conexion a la base de datos
+// express-myconnection = permite escribir codigo sql mas rapido y sencillo en las rutas de express 
+// morgan para ver las peticiones que se hacen en mi servidor
+// ejs motor de plantilla para poder enviar html pero antes de enviarlos son procesados en el servidor
+
+
+
+// en la package.json se modifico la carpeta con los scripts para que siempre se ejecute src/app.js con nodemon
+
+// metodos 
+// join() une todos los elementos de una matriz en una cadena y devuelve una cadena
+// __dirname para ver donde esta ubicacion de algun archivo
+// path El módulo Path proporciona una forma de trabajar con directorios y rutas de archivos. en windows

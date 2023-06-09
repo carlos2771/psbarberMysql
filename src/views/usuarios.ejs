@@ -1,0 +1,74 @@
+<%- include("partials/_header") %>
+
+<pre> <%= data[0].documento %>  </pre>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover me-5"  >
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre</th>
+                        <th>Documento</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Contraseña</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data){ %>
+                        <% for(let i = 0; i < data.length; i++  ){%>
+                            <tr>
+                                <td><%= (i+1) %></td>
+                                <td><%= data[i].nombre %></td>
+                                <td><%= data[i].documento %></td>
+                                <td><%= data[i].telefono %></td>
+                                <td><%= data[i].email %></td>
+                                <td><%= data[i].contraseña %></td>
+                                <td><%= data[i].estado %></td>
+                                <td><a href="/delete/<%= data[i].id %>" class="btn btn-danger">eliminar</a>
+                                <a href="/update/<%= data[i].id %>" class="btn btn-info mt-2">actualizar</a></td>
+                            </tr>
+                            <%} %>
+                    <% } %>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="col-ms-10">
+           <div class="card">
+            <div class="card-body">
+                <form action="/add" method="post">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="documento" placeholder="documento" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="telefono" placeholder="telefono" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contraseña" placeholder="contraseña" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="estado" placeholder="estado" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                </form>
+            </div>
+           </div>
+        </div>
+    </div>
+
+</div>
+
+
+<%- include("partials/_footer") %>
